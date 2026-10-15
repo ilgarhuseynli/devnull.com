@@ -16,7 +16,6 @@ final readonly class EveryoneLogQuery implements LogQuery
     public function builder(User $user): Builder
     {
         return Commit::query()
-            ->with('user')
             ->latest()
             ->latest('id');
     }
